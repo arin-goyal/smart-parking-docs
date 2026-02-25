@@ -3,7 +3,7 @@ title: Smart Parking Detection
 description: Classical Computer Vision Project
 
 header_pages:
-  - index.md
-  - methodology.md
-  - objectives.md
-  - timeline.md
+  - docs/index.md
+  - docs/methodology.md
+  - docs/objectives.md
+  - docs/timeline.md
