@@ -1,142 +1,174 @@
-# Smart Parking Detection using Classical Computer Vision
-
-## 1. Introduction / Problem Statement
-
-In large multi-level parking areas such as malls, airports, and universities, drivers often spend significant time searching for available parking spots. This leads to increased congestion, fuel consumption, and inefficient utilization of parking space.
-
-Existing solutions either rely on sensor-based infrastructure, which is expensive and difficult to maintain, or deep learning-based systems, which require high computational resources and lack interpretability.
-
-This project aims to develop a cost-effective and efficient parking detection system using classical computer vision techniques. By utilizing existing CCTV camera feeds, the system detects occupied and vacant parking slots in real time without requiring additional hardware or deep learning models.
+# 🚗 Smart Parking Detection using Classical Computer Vision
 
 ---
 
-## 2. Objectives
+## 📌 Problem Statement
 
-The primary objective of this project is to design and implement a real-time parking slot detection system using classical computer vision.
+In large multi-level parking facilities such as malls, airports, and universities, drivers often spend significant time searching for available parking spaces. This results in increased traffic congestion, fuel wastage, and inefficient utilization of parking infrastructure.
 
-### Specific Objectives:
+Existing systems rely on either sensor-based solutions, which are costly and require additional hardware, or deep learning-based systems that demand high computational resources.
 
-- To preprocess video frames for enhanced visibility and noise reduction  
-- To detect foreground objects (vehicles) using background subtraction  
+There is a need for a cost-effective, scalable, and efficient solution that can utilize existing infrastructure.
+
+---
+
+## 🎯 Proposed Solution
+
+We propose a smart parking detection system that uses classical computer vision techniques to analyze CCTV video feeds and determine the occupancy status of parking slots in real time.
+
+The system identifies parking slots and classifies them as:
+
+- 🟢 Empty  
+- 🔴 Occupied  
+
+The solution is lightweight, explainable, and does not rely on deep learning.
+
+---
+
+## ⭐ Objectives
+
+### Primary Objective
+
+To design a real-time parking slot detection system using classical computer vision techniques.
+
+### Specific Objectives
+
+- To preprocess video frames for improved clarity  
+- To detect foreground objects using background subtraction  
 - To define parking slots using region-based annotation  
 - To classify each parking slot as occupied or vacant  
-- To visualize results in real time using bounding boxes  
+- To visualize results in real time  
 
 ---
 
-## 3. Methodology
+## 🏢 Existing Solutions
 
-The system follows a structured pipeline based on classical computer vision techniques.
+### Sensor-Based Systems
 
-### 3.1 System Architecture & Tech Stack
+- Require hardware installation per slot  
+- High cost and maintenance  
+- Not scalable for existing infrastructure  
 
-- Programming Language: Python  
+### Deep Learning Systems
+
+- Require GPU and large datasets  
+- Computationally expensive  
+- Black-box models with low interpretability  
+
+---
+
+## 🚀 What Makes Our System Unique
+
+- Uses only classical computer vision  
+- No additional hardware required  
+- Works with existing CCTV cameras  
+- Lightweight and real-time capable  
+- Fully explainable pipeline  
+
+---
+
+## 🧠 Methodology
+
+### 1. System Architecture & Tech Stack
+
+- Language: Python  
 - Libraries: OpenCV, NumPy  
-- Development Environment: VS Code  
-- Input Source: CCTV video feed  
+- Input: CCTV video feed  
 - Output: Real-time occupancy visualization  
 
 ---
 
-### 3.2 Module Development (Input)
-
-The system is divided into functional modules:
+### 2. Module Development (Input)
 
 #### Video Preprocessing
 - Convert frames to grayscale  
 - Apply CLAHE for contrast enhancement  
-- Apply Gaussian blur to reduce noise  
+- Apply Gaussian blur for noise reduction  
 
-#### Background Subtraction
-- Use MOG2 algorithm to separate foreground from background  
-- Identify moving objects (vehicles)  
+#### Foreground Detection
+- Apply background subtraction (MOG2)  
+- Identify moving objects  
 
 #### Slot Annotation
-- Manual selection of parking slots using a click-based tool  
-- Each slot represented as a polygon (ROI)  
+- Manually define parking slots  
+- Represent each slot as a polygon (ROI)  
 
 ---
 
-### 3.3 Execution & Integration (Process)
+### 3. Execution & Integration (Process)
 
-The workflow integrates all modules into a pipeline:
-
-1. Capture video frames  
-2. Apply preprocessing  
-3. Perform background subtraction  
-4. Load predefined parking slots  
-5. For each slot:
-   - Create mask  
-   - Calculate pixel density  
-   - Classify occupancy  
-6. Display results with colored bounding boxes  
+- Capture video frames  
+- Apply preprocessing  
+- Perform foreground detection  
+- Load parking slot coordinates  
+- For each slot:
+  - Create mask  
+  - Compute pixel density  
+  - Classify as occupied or empty  
+- Display results  
 
 ---
 
-### 3.4 Testing & Validation (Output)
+### 4. Testing & Validation (Output)
 
-The system will be evaluated using:
-
-- Accuracy of slot classification  
-- Stability of detection over time  
+- Accuracy of detection  
+- Stability of classification  
 - Frame processing speed (FPS)  
-- Behavior under different lighting conditions  
+- Performance under different lighting conditions  
 
 ---
 
-### 3.5 Constraints
+### 5. Constraints
 
-- Performance may degrade under low lighting  
+- Sensitive to lighting conditions  
 - Shadows may affect detection  
-- Camera displacement requires recalibration  
-- Static object detection is limited by background modeling  
+- Requires fixed camera position  
+- Static object detection limitations  
 
 ---
 
-## 4. System Pipeline
+## 🗂️ System Pipeline
 
-Video Input  
-Preprocessing  
-Background Subtraction  
-Slot Detection  
-Occupancy Classification  
+```
+Video Input → Preprocessing → Foreground Detection → Slot Detection → Occupancy Classification
+```
 
 ---
 
-## 5. Timeline
+## 📅 Timeline
 
 | Week | Task |
 |------|------|
-| 1-2 | Literature review and idea finalization |
-| 3-4 | Video preprocessing implementation |
+| 1-2 | Problem definition and research |
+| 3-4 | Preprocessing implementation |
 | 5-6 | Background subtraction |
-| 7-8 | Slot detection and annotation |
+| 7-8 | Slot detection |
 | 9-10 | Occupancy classification |
-| 11-12 | Testing and optimization |
+| 11-12 | Testing and refinement |
 
 ---
 
-## 6. Resources
+## 📦 Resources
 
 - Python (OpenCV, NumPy)  
 - CCTV video dataset  
-- Personal computer for development  
+- Personal computer  
 
 No external funding required.
 
 ---
 
-## 7. Future Work
+## 🔮 Future Scope
 
-- Improve detection for static vehicles  
+- Improve accuracy for static vehicles  
 - Multi-camera integration  
 - Nearest parking slot recommendation  
-- Mobile/web interface for user guidance  
+- Mobile/web interface  
 
 ---
 
-## 8. Conclusion
+## 📌 Conclusion
 
-This project demonstrates that parking slot detection can be achieved using classical computer vision techniques without relying on deep learning. The system is lightweight, cost-effective, and suitable for real-time applications using existing infrastructure.
+This project demonstrates that efficient parking detection can be achieved using classical computer vision techniques without relying on deep learning. The proposed system is cost-effective, scalable, and suitable for real-time deployment using existing infrastructure.
 
 ---
