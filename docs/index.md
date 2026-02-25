@@ -1,4 +1,19 @@
-# 🚗 Smart Parking Detection using Classical Computer Vision
+---
+layout: default
+title: Home
+---
+
+# 🚗 Smart Parking Detection System
+
+### Classical Computer Vision Project
+
+---
+
+📍 **Course:** Computer Vision  
+📍 **Type:** Academic Project Proposal  
+📍 **Approach:** Classical CV (No Deep Learning)
+
+---
 
 ---
 

@@ -1,0 +1,9 @@
+theme: minima
+title: Smart Parking Detection
+description: Classical Computer Vision Project
+
+header_pages:
+  - index.md
+  - methodology.md
+  - objectives.md
+  - timeline.md
